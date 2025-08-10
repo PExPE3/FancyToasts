@@ -1,0 +1,27 @@
+{
+  "minecraft:adventure/bullseye": {
+    "criteria": {
+      "bullseye": "2025-08-04 05:01:46 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/whos_the_pillager_now": {
+    "criteria": {
+      "kill_pillager": "2025-08-04 05:01:59 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-08-04 05:01:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:dark_forest": "2025-08-04 05:01:42 +0300"
+    },
+    "done": false
+  },
+  "DataVersion": 4440
+}

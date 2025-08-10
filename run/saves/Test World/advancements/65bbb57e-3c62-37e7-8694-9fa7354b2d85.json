@@ -1,0 +1,21 @@
+{
+  "minecraft:adventure/bullseye": {
+    "criteria": {
+      "bullseye": "2025-08-04 06:48:10 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-08-04 06:48:03 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:dark_forest": "2025-08-04 06:48:04 +0300"
+    },
+    "done": false
+  },
+  "DataVersion": 4440
+}

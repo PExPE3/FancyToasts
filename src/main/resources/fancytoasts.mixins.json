@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "net.bivrik.fancytoasts.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ToastManagerMixin",
+      	"AdvancementToastMixinAccessor"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

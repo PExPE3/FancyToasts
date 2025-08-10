@@ -1,0 +1,63 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-08-05 16:53:54 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/summon_iron_golem": {
+    "criteria": {
+      "summoned_golem": "2025-08-05 16:53:58 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:pillager": "2025-08-05 16:54:00 +0300",
+      "minecraft:blaze": "2025-08-05 16:54:00 +0300",
+      "minecraft:skeleton": "2025-08-05 16:54:00 +0300",
+      "minecraft:zoglin": "2025-08-05 16:54:00 +0300",
+      "minecraft:elder_guardian": "2025-08-05 16:54:00 +0300",
+      "minecraft:ravager": "2025-08-05 16:54:00 +0300",
+      "minecraft:bogged": "2025-08-05 16:54:00 +0300",
+      "minecraft:ghast": "2025-08-05 16:54:00 +0300",
+      "minecraft:hoglin": "2025-08-05 16:54:00 +0300",
+      "minecraft:guardian": "2025-08-05 16:54:00 +0300",
+      "minecraft:creaking": "2025-08-05 16:54:00 +0300",
+      "minecraft:breeze": "2025-08-05 16:54:00 +0300",
+      "minecraft:vindicator": "2025-08-05 16:54:00 +0300",
+      "minecraft:magma_cube": "2025-08-05 16:54:00 +0300",
+      "minecraft:piglin_brute": "2025-08-05 16:54:00 +0300",
+      "minecraft:spider": "2025-08-05 16:54:00 +0300",
+      "minecraft:creeper": "2025-08-05 16:54:00 +0300",
+      "minecraft:wither": "2025-08-05 16:54:00 +0300",
+      "minecraft:slime": "2025-08-05 16:54:00 +0300",
+      "minecraft:evoker": "2025-08-05 16:54:00 +0300",
+      "minecraft:phantom": "2025-08-05 16:54:00 +0300",
+      "minecraft:zombified_piglin": "2025-08-05 16:54:00 +0300",
+      "minecraft:witch": "2025-08-05 16:54:00 +0300",
+      "minecraft:wither_skeleton": "2025-08-05 16:54:00 +0300",
+      "minecraft:husk": "2025-08-05 16:54:00 +0300",
+      "minecraft:ender_dragon": "2025-08-05 16:54:00 +0300",
+      "minecraft:shulker": "2025-08-05 16:54:00 +0300",
+      "minecraft:cave_spider": "2025-08-05 16:54:00 +0300",
+      "minecraft:piglin": "2025-08-05 16:54:00 +0300",
+      "minecraft:enderman": "2025-08-05 16:54:00 +0300",
+      "minecraft:silverfish": "2025-08-05 16:54:00 +0300",
+      "minecraft:stray": "2025-08-05 16:54:00 +0300",
+      "minecraft:endermite": "2025-08-05 16:54:00 +0300",
+      "minecraft:vex": "2025-08-05 16:54:00 +0300",
+      "minecraft:zombie": "2025-08-05 16:54:00 +0300",
+      "minecraft:drowned": "2025-08-05 16:54:00 +0300",
+      "minecraft:zombie_villager": "2025-08-05 16:54:00 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:meadow": "2025-08-05 16:53:55 +0300"
+    },
+    "done": false
+  },
+  "DataVersion": 4440
+}

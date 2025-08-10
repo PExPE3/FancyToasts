@@ -1,0 +1,28 @@
+{
+  "minecraft:recipes/decorations/pink_stained_glass_pane": {
+    "criteria": {
+      "has_glass": "2025-08-04 04:22:42 +0300",
+      "has_the_recipe": "2025-08-04 04:22:42 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/bullseye": {
+    "criteria": {
+      "bullseye": "2025-08-04 04:22:49 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-08-04 04:22:35 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:dark_forest": "2025-08-04 04:22:36 +0300"
+    },
+    "done": false
+  },
+  "DataVersion": 4440
+}

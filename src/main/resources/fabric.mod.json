@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "fancytoasts",
+	"version": "${version}",
+	"name": "Fancy Toasts",
+	"description": "Redesigns the old advancement toast system, replacing it with a more attractive and interesting one.",
+	"authors": [
+		"Bivrik"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/fancy-toasts",
+		"sources": "https://github.com/Bivrik/fancy-toasts"
+	},
+	"license": "MIT",
+	"icon": "assets/fancytoasts/textures/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"net.bivrik.fancytoasts.FancyToasts"
+		],
+		"modmenu": [
+			"net.bivrik.fancytoasts.ModMenuImplementation"
+		]
+	},
+	"mixins": [
+		"fancytoasts.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

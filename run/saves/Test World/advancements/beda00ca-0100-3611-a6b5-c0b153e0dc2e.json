@@ -1,0 +1,27 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-08-05 19:27:35 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/summon_iron_golem": {
+    "criteria": {
+      "summoned_golem": "2025-08-05 19:27:43 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:meadow": "2025-08-05 19:27:36 +0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/blowback": {
+    "criteria": {
+      "blowback": "2025-08-05 19:27:39 +0300"
+    },
+    "done": true
+  },
+  "DataVersion": 4440
+}

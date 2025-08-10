@@ -1,0 +1,21 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-08-05 09:25:59 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:dark_forest": "2025-08-05 09:25:59 +0300"
+    },
+    "done": false
+  },
+  "minecraft:nether/ride_strider_in_overworld_lava": {
+    "criteria": {
+      "ride_entity_distance": "2025-08-05 09:26:00 +0300"
+    },
+    "done": true
+  },
+  "DataVersion": 4440
+}

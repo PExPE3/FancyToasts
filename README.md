@@ -35,6 +35,9 @@ Standard showcased on the page. And you might ask: "Where is a showcase of Playf
 
 ## 🔎 Other
 
+### 🧡 Support
+I would be so happy if you could leave me a [tip](https://www.donationalerts.com/r/bivrik) or just enjoy [my mod](https://modrinth.com/mod/fancytoasts) 🧡
+
 ### Dependencies
 Mod supports ModMenu and has custom config screen for easier customization.
 

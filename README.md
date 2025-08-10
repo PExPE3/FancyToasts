@@ -1,12 +1,12 @@
-# Fancy Toasts
+# 📝 Fancy Toasts
 There's a reason you're here. And the reason is, well, either **curiosity** or these annoying, plain, and boring **advancement toasts.** They don't feel like advancements at all! Just some **useless** notifications during the game.
 
-## Showcase
+## 💾 Showcase
 So that's why this mod adds new advancement toast system, which changes old and boring toasts, to new and more exciting ones:
 
 ![Showcase of new standard toast](https://cdn.modrinth.com/data/cached_images/d91aa3e4af50c59e851312d9b1c6f7fb8d4c9648.gif)
 
-## Feautures
+## 🏗️ Feautures
 
 ### Textures
 
@@ -33,7 +33,7 @@ There are 2 types of animations for now:
 
 Standard showcased on the page. And you might ask: "Where is a showcase of Playful one?" Well... try it yourself ;)
 
-## Other
+## 🔎 Other
 
 ### Dependencies
 Mod supports ModMenu and has custom config screen for easier customization.

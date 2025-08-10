@@ -8,8 +8,8 @@
 		"Bivrik"
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/fancy-toasts",
-		"sources": "https://github.com/Bivrik/fancy-toasts"
+		"homepage": "https://modrinth.com/mod/FancyToasts",
+		"sources": "https://github.com/Bivrik/FancyToasts"
 	},
 	"license": "MIT",
 	"icon": "assets/fancytoasts/textures/icon.png",

@@ -1,5 +1,6 @@
 # 📝 Fancy Toasts
 There's a reason you're here. And the reason is, well, either **curiosity** or these annoying, plain, and boring **advancement toasts.** They don't feel like advancements at all! Just some **useless** notifications during the game.
+[CurseForge](https://www.curseforge.com/minecraft/mc-mods/fancy-toasts) [Modrinth](https://modrinth.com/mod/fancytoasts)
 
 ## 💾 Showcase
 So that's why this mod adds new advancement toast system, which changes old and boring toasts, to new and more exciting ones:

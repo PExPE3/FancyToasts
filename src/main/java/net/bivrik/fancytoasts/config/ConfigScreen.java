@@ -32,8 +32,8 @@ public class ConfigScreen extends Screen {
                 Text.translatable(getTranslateableEnum(animationType.toString())),
                 button -> {
                     switch (animationType) {
-                        case AnimationType.STANDARD -> animationType = AnimationType.PLAYFUL;
-                        case AnimationType.PLAYFUL -> animationType = AnimationType.STANDARD;
+                        case STANDARD -> animationType = AnimationType.PLAYFUL;
+                        case PLAYFUL -> animationType = AnimationType.STANDARD;
                     }
                     button.setMessage(Text.translatable(getTranslateableEnum(animationType.toString())));
                 }
@@ -43,9 +43,9 @@ public class ConfigScreen extends Screen {
                 Text.translatable(getTranslateableEnum(textureType.toString())),
                 button -> {
                     switch (textureType) {
-                        case TextureType.VANILLA -> textureType = TextureType.NATURE;
-                        case TextureType.NATURE -> textureType = TextureType.OG;
-                        case TextureType.OG -> textureType = TextureType.VANILLA;
+                        case VANILLA -> textureType = TextureType.NATURE;
+                        case NATURE -> textureType = TextureType.OG;
+                        case OG -> textureType = TextureType.VANILLA;
                     }
                     button.setMessage(Text.translatable(getTranslateableEnum(textureType.toString())));
                 }

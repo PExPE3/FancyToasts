@@ -5,6 +5,7 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.text.OrderedText;
 import net.minecraft.util.math.ColorHelper;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
 
@@ -34,70 +35,69 @@ public class StandardAnimation extends AdvancementToastAnimation {
         if (fadeOutProgress > 0) {
             float fadeOutY = easeInLerp(0, -80, fadeOutProgress);
 
-            matrix.pushMatrix();
-            matrix.translate(0, fadeOutY);
+            matrix.push();
+            matrix.translate(0, fadeOutY, 0);
         }
 
         if (backgroundAppearProgress > 0) {
-            matrix.pushMatrix();
+            matrix.push();
             if (backgroundAppearProgress != 1) {
                 int y = easeOutLerp(-200, 0, backgroundAppearProgress);
 
-                matrix.translate(0, y);
+                matrix.translate(0, y, 0);
             }
             drawBackground(context);
-            matrix.popMatrix();
+            matrix.pop();
         }
 
         if (bannerAppearProgress > 0) {
-            matrix.pushMatrix();
+            matrix.push();
             if (bannerAppearProgress != 1) {
                 float xScale = easeOutLerp(0.0f, 1.0f, bannerAppearProgress);
 
-                matrix.translate(81, 0);
-                matrix.scale(xScale, 1.0f);
-                matrix.translate(-81, 0);
+                matrix.translate(81, 0, 0);
+                matrix.scale(xScale, 1, 1);
+                matrix.translate(-81, 0, 0);
             }
             drawBanner(context);
-            matrix.popMatrix();
+            matrix.pop();
         }
 
         if (iconAppearProgress > 0) {
-            matrix.pushMatrix();
+            matrix.push();
             if (iconAppearProgress != 1) {
                 int y = easeOutLerp(-100, 0, iconAppearProgress);
                 float scale = easeOutLerp(0.0f, 1.0f, iconAppearProgress);
 
-                matrix.translate(81, 13);
-                matrix.scale(scale, scale);
-                matrix.translate(-81, -13);
-                matrix.translate(0, y);
+                matrix.translate(81, 13, 0);
+                matrix.scale(scale, scale, scale);
+                matrix.translate(-81, -13, 0);
+                matrix.translate(0, y, 0);
             }
-            matrix.translate(0, (float) Math.sin(time / 500.0) * 2);
+            matrix.translate(0, (float) Math.sin(time / 500.0) * 2, 0);
             drawIcon(context);
-            matrix.popMatrix();
+            matrix.pop();
         }
 
         if (textAppearProgress > 0) {
-            int toastColor = ColorHelper.withAlpha(textAppearProgress, getSetup().toastColor());
-            int titleColor = ColorHelper.withAlpha(textAppearProgress, getSetup().titleColor());
+            int a = MathHelper.floor(textAppearProgress * 255.0F) << 24 | 67108864;
 
-            drawCenteredText(context, textRenderer, getSetup().display().getFrame().getToastText().asOrderedText(), toastWidth / 2, 25, toastColor);
+            drawCenteredText(context, textRenderer, getSetup().display().getFrame().getToastText().asOrderedText(), toastWidth / 2, 25, getSetup().toastColor() | a);
             List<OrderedText> list = textRenderer.wrapLines(getSetup().display().getTitle(), toastWidth - 20);
             if (list.size() == 1) {
-                drawCenteredText(context, textRenderer, list.getFirst(), toastWidth / 2, 43, titleColor);
+                drawCenteredText(context, textRenderer, list.get(0), toastWidth / 2, 43, getSetup().titleColor() | a);
             }
             else {
                 int lineHeight = 42 - (9 * (list.size() - 1)) / 2;
                 for (OrderedText text : list) {
-                    drawCenteredText(context, textRenderer, text, toastWidth / 2, lineHeight, titleColor);
+                    drawCenteredText(context, textRenderer, text, toastWidth / 2, lineHeight, getSetup().titleColor() | a);
                     lineHeight += 9;
                 }
             }
         }
 
         if (fadeOutProgress > 0) {
-            matrix.popMatrix();
+            matrix.pop();
         }
     }
 

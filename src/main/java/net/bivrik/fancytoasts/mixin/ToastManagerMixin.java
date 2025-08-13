@@ -42,29 +42,30 @@ public abstract class ToastManagerMixin {
 
 	@Inject(at = @At("TAIL"), method = "draw")
 	private void onDraw(DrawContext context, CallbackInfo info) {
-		if (currentAdvancementToast == null || CLIENT.options.hudHidden) {
+		if (CLIENT.options.hudHidden) {
 			return;
+		}
+
+		if (currentAdvancementToast == null) {
+			if (!ADVANCEMENT_TOASTS.isEmpty()) {
+				setCurrentAdvancement();
+			}
+
+			return;
+		}
+		else {
+			if (!updateCurrentAdvancement()) {
+				return;
+			}
 		}
 
 		int xPos = (context.getScaledWindowWidth() / 2) - currentAdvancementToast.getWidth() / 2;
 
 		var matrix = context.getMatrices();
-		matrix.pushMatrix();
-		matrix.translate(xPos, 20);
+		matrix.push();
+		matrix.translate(xPos, 20, 0);
 		currentAdvancementToast.draw(context, CLIENT.textRenderer);
-		matrix.popMatrix();
-	}
-
-	@Inject(at = @At("HEAD"), method = "update")
-	private void onUpdate(CallbackInfo info) {
-		if (currentAdvancementToast == null) {
-			if (!ADVANCEMENT_TOASTS.isEmpty()) {
-				setCurrentAdvancement();
-			}
-		}
-		else {
-			updateCurrentAdvancement();
-		}
+		matrix.pop();
 	}
 
 	@Unique
@@ -77,13 +78,16 @@ public abstract class ToastManagerMixin {
 	}
 
 	@Unique
-	private void updateCurrentAdvancement() {
+	private boolean updateCurrentAdvancement() {
 		long time = Util.getMeasuringTimeMs() - startTime;
 		currentAdvancementToast.update(time);
 
 		if (!currentAdvancementToast.getVisibility()) {
 			currentAdvancementToast = null;
+			return false;
 		}
+
+		return true;
 	}
 
 	@Inject(at = @At("HEAD"), method = "clear")

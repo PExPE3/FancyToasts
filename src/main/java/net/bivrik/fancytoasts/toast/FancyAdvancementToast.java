@@ -36,16 +36,16 @@ public class FancyAdvancementToast {
             Identifier texture = TextureType.TEXTURES.get(textureType);
 
             switch (display.getFrame()) {
-                case AdvancementFrame.TASK -> {
-                    this.animation.setSetup(new RenderSetup(texture, TASK_TEXTURE_UV, display, Colors.YELLOW, Colors.WHITE));
+                case TASK -> {
+                    this.animation.setSetup(new RenderSetup(texture, TASK_TEXTURE_UV, display, 0xFFFF00, 0xFFFFFF));
                     toastSound = SoundEvents.ENTITY_ALLAY_ITEM_GIVEN;
                 }
-                case AdvancementFrame.GOAL -> {
-                    this.animation.setSetup(new RenderSetup(texture, GOAL_TEXTURE_UV, display, Colors.CYAN, Colors.WHITE));
+                case GOAL -> {
+                    this.animation.setSetup(new RenderSetup(texture, GOAL_TEXTURE_UV, display, 0x00FFFF, 0xFFFFFF));
                     toastSound = SoundEvents.ENTITY_FIREWORK_ROCKET_TWINKLE_FAR;
                 }
-                case AdvancementFrame.CHALLENGE -> {
-                    this.animation.setSetup(new RenderSetup(texture, CHALLENGE_TEXTURE_UV, display, 0xFFEA3CFF, Colors.CYAN));
+                case CHALLENGE -> {
+                    this.animation.setSetup(new RenderSetup(texture, CHALLENGE_TEXTURE_UV, display, 0xEA3CFF, 0x00FFFF));
                     toastSound = SoundEvents.UI_TOAST_CHALLENGE_COMPLETE;
                 }
             }

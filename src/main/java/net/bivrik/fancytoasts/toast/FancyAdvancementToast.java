@@ -28,6 +28,8 @@ public class FancyAdvancementToast {
     private SoundEvent toastSound;
     private boolean isVisible = true;
     private long time;
+    private SoundManager soundManager;
+    private int playedSoundsCount = 0;
 
     public FancyAdvancementToast(Advancement advancement, AnimationType animationType, TextureType textureType) {
         AdvancementDisplay display = advancement.display().orElse(null);
@@ -55,10 +57,9 @@ public class FancyAdvancementToast {
         }
     }
 
-    public void startSoundQueue(SoundManager manager) {
+    public void startSounds(SoundManager manager) {
+        soundManager = manager;
         manager.play(PositionedSoundInstance.master(SoundEvents.UI_TOAST_IN, 1f, 1.8f));
-        manager.play(PositionedSoundInstance.master(toastSound, 1f, 0.8f), animation.getToastSoundTiming() / 50);
-        manager.play(PositionedSoundInstance.master(SoundEvents.UI_TOAST_OUT, 1f, 1.8f), animation.getDuration() / 50 - 10);
     }
 
     public void update(long time) {
@@ -66,6 +67,16 @@ public class FancyAdvancementToast {
 
         if (this.time >= animation.getDuration()) {
             isVisible = false;
+        }
+
+        int timeInSeconds = (int) (this.time / 50);
+        if (playedSoundsCount == 0 && timeInSeconds == animation.getToastSoundTiming() / 50) {
+            soundManager.play(PositionedSoundInstance.master(toastSound, 1f, 0.75f));
+            playedSoundsCount++;
+        }
+        if (playedSoundsCount == 1 && timeInSeconds == animation.getDuration() / 50 - 10) {
+            soundManager.play(PositionedSoundInstance.master(SoundEvents.UI_TOAST_OUT, 1f, 1.7f));
+            playedSoundsCount++;
         }
     }
 

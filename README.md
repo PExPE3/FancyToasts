@@ -1,6 +1,9 @@
 # 📝 Fancy Toasts
 There's a reason you're here. And the reason is, well, either **curiosity** or these annoying, plain, and boring **advancement toasts.** They don't feel like advancements at all! Just some **useless** notifications during the game.
-[CurseForge](https://www.curseforge.com/minecraft/mc-mods/fancy-toasts) [Modrinth](https://modrinth.com/mod/fancytoasts)
+
+Download on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/fancy-toasts)
+<br>
+Download on [Modrinth](https://modrinth.com/mod/fancytoasts)
 
 ## 💾 Showcase
 So that's why this mod adds new advancement toast system, which changes old and boring toasts, to new and more exciting ones:
@@ -12,15 +15,15 @@ So that's why this mod adds new advancement toast system, which changes old and 
 ### Textures
 
 Mod actually make **difference** between Task, Goal, and Challenge advancements. They are welcomed with different sounds and textures. Mod also has none the less than **3 different texture types**, which are:
-> - **Vanilla**
+>- Vanilla
 >
 > ![Vanilla Style texture toast](https://cdn.modrinth.com/data/cached_images/98766d6b73f9ede5d9aea0114d1c4eacde038099_0.webp)
 
->- **OG**
+>- OG
 >
 > ![OG texture type](https://cdn.modrinth.com/data/cached_images/a55bc0805ae6b8d2828a607c78e6c8450908c619_0.webp)
 
->- **Nature**
+>- Nature
 >
 >![Nature texture type](https://cdn.modrinth.com/data/cached_images/3bb5e4346ec66e1db013c1cbf59a6cfc96506b21_0.webp)
 
@@ -37,10 +40,10 @@ Standard showcased on the page. And you might ask: "Where is a showcase of Playf
 ## 🔎 Other
 
 ### 🧡 Support
-I would be so happy if you could leave me a [tip](https://www.donationalerts.com/r/bivrik) or just enjoy [my mod](https://modrinth.com/mod/fancytoasts) 🧡
+I would be so happy if you could [leave me a tip](https://www.donationalerts.com/r/bivrik) 🧡
 
 ### Dependencies
-Mod supports ModMenu and has custom config screen for easier customization.
+Mod supports Mod Menu and has custom config screen for easier customization.
 
 ### Languages
 - English (en_us)

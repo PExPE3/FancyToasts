@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FancyToasts.main.iml" filepath="$PROJECT_DIR$/.idea/modules/FancyToasts.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FancyToasts.test.iml" filepath="$PROJECT_DIR$/.idea/modules/FancyToasts.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FancyToasts1.main.iml" filepath="$PROJECT_DIR$/.idea/modules/FancyToasts1.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FancyToasts1.test.iml" filepath="$PROJECT_DIR$/.idea/modules/FancyToasts1.test.iml" />
     </modules>
   </component>
 </project>

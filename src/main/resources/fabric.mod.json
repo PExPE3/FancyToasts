@@ -8,8 +8,9 @@
 		"Bivrik"
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/FancyToasts",
-		"sources": "https://github.com/Bivrik/FancyToasts"
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/fancy-toasts",
+		"sources": "https://github.com/Bivrik/FancyToasts",
+		"issues": "https://github.com/Bivrik/FancyToasts/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/fancytoasts/textures/icon.png",
@@ -27,7 +28,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
-		"minecraft": "~1.21.8",
+		"minecraft": "~1.21.6",
 		"java": ">=21",
 		"fabric-api": "*"
 	}

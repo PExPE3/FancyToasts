@@ -15,12 +15,8 @@
 	"icon": "assets/fancytoasts/textures/icon.png",
 	"environment": "client",
 	"entrypoints": {
-		"client": [
-			"net.bivrik.fancytoasts.FancyToasts"
-		],
-		"modmenu": [
-			"net.bivrik.fancytoasts.ModMenuImplementation"
-		]
+		"client": ["net.bivrik.fancytoasts.FancyToasts"],
+		"modmenu": ["net.bivrik.fancytoasts.ModMenuImplementation"]
 	},
 	"mixins": [
 		"fancytoasts.mixins.json"

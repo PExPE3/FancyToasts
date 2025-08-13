@@ -34,7 +34,7 @@ public abstract class ToastManagerMixin {
 	private void onAddToast(Toast toast, CallbackInfo info) {
 		if (toast instanceof AdvancementToast) {
 			info.cancel();
-			Advancement advancement = ((AdvancementToastMixinAccessor) toast).getAdvancement().value();
+			Advancement advancement = ((AdvancementToastMixinAccessor) toast).getAdvancement();
 			FancyAdvancementToast fancyAdvancement = new FancyAdvancementToast(advancement, FancyToasts.CONFIG.animationType, FancyToasts.CONFIG.textureType);
 			ADVANCEMENT_TOASTS.add(fancyAdvancement);
 		}

@@ -15,6 +15,8 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 
+import java.util.Objects;
+
 import static net.bivrik.fancytoasts.toast.texture.TextureUV.*;
 
 @Environment(EnvType.CLIENT)
@@ -30,28 +32,24 @@ public class FancyAdvancementToast {
     private int playedSoundsCount = 0;
 
     public FancyAdvancementToast(Advancement advancement, AnimationType animationType, TextureType textureType) {
-        AdvancementDisplay display = advancement.display().orElse(null);
-        if (display != null) {
-            animation = AnimationType.ANIMATIONS.get(animationType).get();
-            Identifier texture = TextureType.TEXTURES.get(textureType);
+        AdvancementDisplay display = advancement.getDisplay();
 
-            switch (display.getFrame()) {
-                case TASK -> {
-                    this.animation.setSetup(new RenderSetup(texture, TASK_TEXTURE_UV, display, 0xFFFF00, 0xFFFFFF));
-                    toastSound = SoundEvents.ENTITY_ALLAY_ITEM_GIVEN;
-                }
-                case GOAL -> {
-                    this.animation.setSetup(new RenderSetup(texture, GOAL_TEXTURE_UV, display, 0x00FFFF, 0xFFFFFF));
-                    toastSound = SoundEvents.ENTITY_FIREWORK_ROCKET_TWINKLE_FAR;
-                }
-                case CHALLENGE -> {
-                    this.animation.setSetup(new RenderSetup(texture, CHALLENGE_TEXTURE_UV, display, 0xEA3CFF, 0x00FFFF));
-                    toastSound = SoundEvents.UI_TOAST_CHALLENGE_COMPLETE;
-                }
+        animation = AnimationType.ANIMATIONS.get(animationType).get();
+        Identifier texture = TextureType.TEXTURES.get(textureType);
+
+        switch (Objects.requireNonNull(display).getFrame()) {
+            case TASK -> {
+                this.animation.setSetup(new RenderSetup(texture, TASK_TEXTURE_UV, display, 0xFFFF00, 0xFFFFFF));
+                toastSound = SoundEvents.ENTITY_ALLAY_ITEM_GIVEN;
             }
-        }
-        else {
-            throw new IllegalArgumentException("Advancement has no display!");
+            case GOAL -> {
+                this.animation.setSetup(new RenderSetup(texture, GOAL_TEXTURE_UV, display, 0x00FFFF, 0xFFFFFF));
+                toastSound = SoundEvents.ENTITY_FIREWORK_ROCKET_TWINKLE_FAR;
+            }
+            case CHALLENGE -> {
+                this.animation.setSetup(new RenderSetup(texture, CHALLENGE_TEXTURE_UV, display, 0xEA3CFF, 0x00FFFF));
+                toastSound = SoundEvents.UI_TOAST_CHALLENGE_COMPLETE;
+            }
         }
     }
 

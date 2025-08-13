@@ -69,6 +69,7 @@ public class ConfigScreen extends Screen {
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        super.renderBackground(context);
         super.render(context, mouseX, mouseY, delta);
 
         TextRendererHelper.drawCenteredText(context, this.textRenderer, Text.translatable("fancytoasts.gui.config_title").asOrderedText(), width / 2, 20, Colors.WHITE, true);

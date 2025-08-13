@@ -71,7 +71,7 @@ public abstract class ToastManagerMixin {
 	@Unique
 	private void setCurrentAdvancement() {
 		currentAdvancementToast = ADVANCEMENT_TOASTS.getFirst();
-		currentAdvancementToast.startSoundQueue(CLIENT.getSoundManager());
+		currentAdvancementToast.startSounds(CLIENT.getSoundManager());
 
 		ADVANCEMENT_TOASTS.removeFirst();
 		startTime = Util.getMeasuringTimeMs();

@@ -7,14 +7,12 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementDisplay;
-import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.client.sound.SoundManager;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
 
 import static net.bivrik.fancytoasts.toast.texture.TextureUV.*;
@@ -24,10 +22,12 @@ public class FancyAdvancementToast {
     private static final int WIDTH = 162;
     private static final int HEIGHT = 70;
 
+    private SoundManager soundManager;
     private final AdvancementToastAnimation animation;
     private SoundEvent toastSound;
     private boolean isVisible = true;
     private long time;
+    private int playedSoundsCount = 0;
 
     public FancyAdvancementToast(Advancement advancement, AnimationType animationType, TextureType textureType) {
         AdvancementDisplay display = advancement.display().orElse(null);
@@ -55,10 +55,9 @@ public class FancyAdvancementToast {
         }
     }
 
-    public void startSoundQueue(SoundManager manager) {
-        manager.play(PositionedSoundInstance.master(SoundEvents.UI_TOAST_IN, 1f, 1.8f));
-        manager.play(PositionedSoundInstance.master(toastSound, 1f, 0.8f), animation.getToastSoundTiming() / 50);
-        manager.play(PositionedSoundInstance.master(SoundEvents.UI_TOAST_OUT, 1f, 1.8f), animation.getDuration() / 50 - 10);
+    public void startSounds(SoundManager manager) {
+        soundManager = manager;
+        manager.play(PositionedSoundInstance.master(SoundEvents.UI_TOAST_IN, 1f, 1.7f));
     }
 
     public void update(long time) {
@@ -66,6 +65,17 @@ public class FancyAdvancementToast {
 
         if (this.time >= animation.getDuration()) {
             isVisible = false;
+            return;
+        }
+
+        int timeInSeconds = (int) (this.time / 50);
+        if (playedSoundsCount == 0 && timeInSeconds == animation.getToastSoundTiming() / 50) {
+            soundManager.play(PositionedSoundInstance.master(toastSound, 1f, 0.75f));
+            playedSoundsCount++;
+        }
+        if (playedSoundsCount == 1 && timeInSeconds == animation.getDuration() / 50 - 10) {
+            soundManager.play(PositionedSoundInstance.master(SoundEvents.UI_TOAST_OUT, 1f, 1.7f));
+            playedSoundsCount++;
         }
     }
 

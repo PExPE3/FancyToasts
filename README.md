@@ -1,4 +1,4 @@
-> This is 1.21.8 Fabric/Forge/NeoForge version 1.3.4
+> This is 1.21.6+7 Fabric/Forge/NeoForge version 1.3.3
 
 # Fancy Toasts 🎉
 There is a reason why you are here. It might be curiosity. But I think you are here because of there old-fashion advancement toasts! This is a Minecraft Mod that changes plain, boring, and annoying advancement toasts to something new and interesting!
@@ -44,19 +44,3 @@ If you enjoy this mod, and want more updates and support to future versions, the
 
 # Changelog 📝
 > Only `default` branch
-
-## v1.3.3
-* New features:
-  * Texture type `Modern`
-* Bug fixes:
-  * NeoForge crashes when open `Config` screen
-  * Forge looses `mixin`s after build
-> Port to Fabric/Forge/NeoForge (18.08.25)
-
-## v1.3.2
-* Bug fixes:
-  * Wrong audio delaying due to pause menu
-> Bug fixes (14.08.25)
-
-## v1.3.1
-> Initial release on Fabric (13.08.25)

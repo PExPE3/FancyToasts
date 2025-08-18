@@ -68,7 +68,7 @@ public class ToastManagerMixin {
         var matrix = GUIHelper.get(graphics);
 
         GUIHelper.push(matrix);
-        GUIHelper.translate(matrix, xPos, 20);
+        GUIHelper.translate(matrix, xPos, 20, 800);
         fancyToasts$current.draw(graphics, minecraft);
         GUIHelper.pop(matrix);
     }

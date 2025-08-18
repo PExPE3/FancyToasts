@@ -1,40 +1,43 @@
 package net.bivrik.fancytoasts.renderer;
 
-import net.bivrik.fancytoasts.Constants;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
-import org.joml.Matrix3x2fStack;
 
 public class GUIHelper {
-    public static void translate(Matrix3x2fStack matrix, float x, float y) {
-        matrix.translate(x, y);
+    public static void translate(PoseStack pose, float x, float y, float z) {
+        pose.translate(x, y, z);
+    }
+    public static void translate(PoseStack pose, float x, float y) {
+        translate(pose, x, y, 0);
     }
 
-    public static void scale(Matrix3x2fStack matrix, float x, float y) {
-        matrix.scale(x, y);
+    public static void scale(PoseStack pose, float x, float y) {
+        pose.scale(x, y, 1);
     }
-    public static void scale(Matrix3x2fStack matrix, float scale) {
-        matrix.scale(scale);
-    }
-
-    public static void rotate(Matrix3x2fStack matrix, float rotation) {
-        matrix.rotate(rotation);
+    public static void scale(PoseStack pose, float scale) {
+        pose.scale(scale, scale, scale);
     }
 
-    public static Matrix3x2fStack get(GuiGraphics gui) {
+    public static void rotate(PoseStack pose, float rotation) {
+        pose.mulPose(Axis.ZP.rotation(rotation));
+    }
+
+    public static PoseStack get(GuiGraphics gui) {
         return gui.pose();
     }
 
-    public static void push(Matrix3x2fStack matrix) {
-        matrix.pushMatrix();
+    public static void push(PoseStack pose) {
+        pose.pushPose();
     }
 
-    public static void pop(Matrix3x2fStack matrix) {
-        matrix.popMatrix();
+    public static void pop(PoseStack pose) {
+        pose.popPose();
     }
 
     public static void drawGUITexture(GuiGraphics graphics, ResourceLocation atlas, int x, int y, int u, int v, int width, int height) {
-        graphics.blit(RenderPipelines.GUI_TEXTURED, atlas, x, y, u, v, width, height, 256, 256);
+        graphics.blit(RenderType::guiTextured, atlas, x, y, u, v, width, height, 256, 256);
     }
 }

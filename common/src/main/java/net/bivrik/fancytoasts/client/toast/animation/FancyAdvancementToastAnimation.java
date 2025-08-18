@@ -1,6 +1,5 @@
 package net.bivrik.fancytoasts.client.toast.animation;
 
-import net.bivrik.fancytoasts.Constants;
 import net.bivrik.fancytoasts.client.toast.FancyAdvancementToast;
 import net.bivrik.fancytoasts.renderer.GUIHelper;
 import net.bivrik.fancytoasts.texture.TextureUV;
@@ -25,9 +24,13 @@ public abstract class FancyAdvancementToastAnimation {
 
     protected void drawIcon(GuiGraphics graphics) {
         TextureUV frameUV = setup.uvs().frame();
-        GUIHelper.drawGUITexture(graphics, setup.texture(), 68, 0, frameUV.u(), frameUV.v(), 26, 26);
 
+        var pose = GUIHelper.get(graphics);
+        GUIHelper.push(pose);
+        GUIHelper.translate(pose, 0, 0, 1);
+        GUIHelper.drawGUITexture(graphics, setup.texture(), 68, 0, frameUV.u(), frameUV.v(), 26, 26);
         graphics.renderFakeItem(setup.display().getIcon(), 73, 5);
+        GUIHelper.pop(pose);
     }
 
     protected void drawBanner(GuiGraphics graphics) {

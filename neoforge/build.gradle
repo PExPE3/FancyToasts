@@ -22,9 +22,10 @@ neoForge {
         client {
             client()
         }
-        data {
-            clientData()
-        }
+        // Just in case I leave it here for future
+        //data {
+        //    clientData()
+        //}
         server {
             server()
         }

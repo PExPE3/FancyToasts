@@ -72,7 +72,8 @@ minecraft {
 sourceSets.main.resources.srcDir 'src/generated/resources'
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    // // Changed minecraft_version to 1.21.3, because there is no 1.21.2 forge. Why, though?
+    minecraft "net.minecraftforge:forge:1.21.3-${forge_version}"
     annotationProcessor("org.spongepowered:mixin:0.8.5:processor")
 
     // Forge's hack fix

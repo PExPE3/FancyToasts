@@ -38,6 +38,6 @@ public class GUIHelper {
     }
 
     public static void drawGUITexture(GuiGraphics graphics, ResourceLocation atlas, int x, int y, int u, int v, int width, int height) {
-        graphics.blit(RenderType::guiTextured, atlas, x, y, u, v, width, height, 256, 256);
+        graphics.blit(atlas, x, y, u, v, width, height, 256, 256);
     }
 }
